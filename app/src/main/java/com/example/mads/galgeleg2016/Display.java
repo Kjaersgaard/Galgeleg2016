@@ -1,6 +1,7 @@
 package com.example.mads.galgeleg2016;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,10 @@ public class Display extends Activity{
 
         Blobby.setOnClickListener(new View.OnClickListener()
         {
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
+                Intent i = new Intent(Display.this, JoinLobby.class);
+                i.putExtra("ROBERT", "Mads");
+                startActivity(i);
 
             }
         });
@@ -29,6 +32,9 @@ public class Display extends Activity{
         Bstats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(Display.this, WatchStats.class);
+                i.putExtra("ROBERT", "Frederik");
+                startActivity(i);
 
             }
         });
